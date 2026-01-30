@@ -70,4 +70,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer><?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/footer.blade.php ENDPATH**/ ?>

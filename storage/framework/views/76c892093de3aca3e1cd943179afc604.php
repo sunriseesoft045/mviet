@@ -35,7 +35,7 @@
 ?>
 <div
     x-data="{
-        slides: {{ Js::from($heroSlides) }},
+        slides: <?php echo e(Js::from($heroSlides)); ?>,
         activeSlide: 0,
         autoplay: null,
         startX: 0,
@@ -159,4 +159,4 @@
         </template>
     </div>
 
-</div>
+</div><?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/hero-slider.blade.php ENDPATH**/ ?>

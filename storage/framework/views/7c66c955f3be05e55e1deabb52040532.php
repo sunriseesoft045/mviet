@@ -18,7 +18,7 @@
 -->
 <section
     x-data="{
-        images: {{ Js::from($processedGalleryImages) }},
+        images: <?php echo e(Js::from($processedGalleryImages)); ?>,
         isModalOpen: false,
         modalImage: '',
         openModal(image) {
@@ -96,3 +96,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/photo-gallery.blade.php ENDPATH**/ ?>

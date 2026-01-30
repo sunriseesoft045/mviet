@@ -14,37 +14,40 @@
 
         <!-- News Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @foreach ($notices as $notice)
+            <?php $__currentLoopData = $notices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="group card-glass hover:shadow-xl transition-shadow duration-300 flex flex-col transform hover:-translate-y-2">
                     <!-- Card Header -->
                     <div class="p-6 flex justify-between items-start">
-                        <span class="text-xs font-semibold px-2 py-1 rounded-full {{ $notice['category_color'] }}">
-                            {{ $notice['category'] }}
+                        <span class="text-xs font-semibold px-2 py-1 rounded-full <?php echo e($notice['category_color']); ?>">
+                            <?php echo e($notice['category']); ?>
+
                         </span>
                         <span class="text-xs text-primary/70">
-                            {{ $notice['date'] }}
+                            <?php echo e($notice['date']); ?>
+
                         </span>
                     </div>
 
                     <!-- Card Body -->
                     <div class="p-6 pt-0 flex-grow">
                         <h3 class="text-lg font-bold text-primary leading-tight font-heading">
-                            <a href="{{ $notice['link'] }}" class="hover:text-accent transition-colors duration-300">{{ $notice['title'] }}</a>
+                            <a href="<?php echo e($notice['link']); ?>" class="hover:text-accent transition-colors duration-300"><?php echo e($notice['title']); ?></a>
                         </h3>
                         <p class="mt-2 text-sm text-primary/80 line-clamp-3 font-body">
-                            {{ $notice['description'] }}
+                            <?php echo e($notice['description']); ?>
+
                         </p>
                     </div>
 
                     <!-- Card Footer -->
                     <div class="p-6 pt-0 mt-auto">
-                        <a href="{{ $notice['link'] }}"
+                        <a href="<?php echo e($notice['link']); ?>"
                            class="btn btn-primary text-sm">
                             Read More
                         </a>
                     </div>
                 </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
         <!-- View All Button -->
@@ -55,3 +58,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/news-section.blade.php ENDPATH**/ ?>

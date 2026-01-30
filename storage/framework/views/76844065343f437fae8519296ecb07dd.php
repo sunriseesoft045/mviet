@@ -16,7 +16,7 @@
 
         <!-- Testimonials Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @foreach ($testimonials as $testimonial)
+            <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="group card-glass p-8 flex flex-col h-full transform hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-xl">
                     <!-- Quotation Icon -->
                     <div>
@@ -27,29 +27,29 @@
 
                     <!-- Testimonial Text -->
                     <blockquote class="mt-6 text-primary/80 flex-grow font-body">
-                        <p>{{ $testimonial['testimonial'] }}</p>
+                        <p><?php echo e($testimonial['testimonial']); ?></p>
                     </blockquote>
 
                     <!-- Author -->
                     <footer class="mt-6 pt-6 border-t border-primary/20">
                         <div class="flex items-center">
-                            <img class="h-12 w-12 rounded-full object-cover" src="{{ asset($testimonial['avatar']) }}" alt="{{ $testimonial['name'] }}">
+                            <img class="h-12 w-12 rounded-full object-cover" src="<?php echo e(asset($testimonial['avatar'])); ?>" alt="<?php echo e($testimonial['name']); ?>">
                             <div class="ml-4">
-                                <div class="text-base font-bold text-primary font-heading">{{ $testimonial['name'] }}</div>
-                                <div class="text-sm text-primary/70 font-body">{{ $testimonial['role'] }}</div>
+                                <div class="text-base font-bold text-primary font-heading"><?php echo e($testimonial['name']); ?></div>
+                                <div class="text-sm text-primary/70 font-body"><?php echo e($testimonial['role']); ?></div>
                             </div>
                         </div>
                          <!-- Rating -->
                         <div class="mt-4 flex items-center">
-                            @for ($i = 0; $i < 5; $i++)
-                                <svg class="h-5 w-5 {{ $i < $testimonial['rating'] ? 'text-accent' : 'text-primary/20' }}" fill="currentColor" viewBox="0 0 20 20">
+                            <?php for($i = 0; $i < 5; $i++): ?>
+                                <svg class="h-5 w-5 <?php echo e($i < $testimonial['rating'] ? 'text-accent' : 'text-primary/20'); ?>" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
-                            @endfor
+                            <?php endfor; ?>
                         </div>
                     </footer>
                 </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
         <!-- View All Button -->
@@ -61,3 +61,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/testimonials-section.blade.php ENDPATH**/ ?>

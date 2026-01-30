@@ -7,6 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: 'rgb(20 83 45 / <alpha-value>)',
+        },
+        secondary: {
+          DEFAULT: 'rgb(220 252 231 / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'rgb(250 204 21 / <alpha-value>)',
+        },
         brand: {
           'green': {
             '50': '#f0fdf4',
@@ -35,6 +44,10 @@ export default {
             '950': '#172554',
           },
         },
+      },
+      fontFamily: {
+        heading: ['Georgia', 'serif'],
+        body: ['Roboto', 'sans-serif'],
       },
       boxShadow: {
         'header': '0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.04)',

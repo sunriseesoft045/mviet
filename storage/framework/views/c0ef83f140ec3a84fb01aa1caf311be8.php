@@ -22,3 +22,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/admissions-cta.blade.php ENDPATH**/ ?>

@@ -26,28 +26,31 @@
 
         <!-- Institutions Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            @foreach ($institutions as $institution)
+            <?php $__currentLoopData = $institutions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $institution): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="group card-glass overflow-hidden transform hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-xl">
                     <!-- Card Image -->
                     <div class="h-48 overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="{{ $getMediaUrl($institution['image'], 'https://picsum.photos/seed/institution-' . $loop->index . '/800/600') }}" alt="{{ $institution['name'] }}">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="<?php echo e($getMediaUrl($institution['image'], 'https://picsum.photos/seed/institution-' . $loop->index . '/800/600')); ?>" alt="<?php echo e($institution['name']); ?>">
                     </div>
 
                     <!-- Card Content -->
                     <div class="p-6 text-center">
                         <h3 class="text-lg font-bold text-primary font-heading">
-                            {{ $institution['name'] }}
+                            <?php echo e($institution['name']); ?>
+
                         </h3>
                         <p class="mt-2 text-sm text-primary/80 font-body">
-                            {{ $institution['programs'] }}
+                            <?php echo e($institution['programs']); ?>
+
                         </p>
-                        <a href="{{ $institution['link'] }}"
+                        <a href="<?php echo e($institution['link']); ?>"
                            class="btn btn-primary text-sm mt-6">
                             Visit
                         </a>
                     </div>
                 </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/institutions-section.blade.php ENDPATH**/ ?>

@@ -1,27 +1,22 @@
-<!--
-  Blade Component: resources/views/components/app-layout.blade.php
-  Description: Main application layout with Navbar and Footer.
--->
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ $title ?? 'Professional College Website' }}</title>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="antialiased bg-gray-50 text-gray-800">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> @yield('title', 'College Website')</title>
 
-        <!-- Site Navbar -->
-        <x-navbar />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+<body class="bg-gray-100">
 
-        <!-- Site Footer -->
-        <x-footer />
+    @include('components.premium-header')
+    @include('components.navbar')
 
-    </body>
+    <main class="relative z-0">
+        @yield('content')
+    </main>
+
+    @include('components.footer')
+</body>
 </html>

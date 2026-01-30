@@ -1,38 +1,16 @@
-<x-app-layout>
-    <x-slot:title>
-        Homepage
-    </x-slot:title>
+ @extends('components.app-layout')
 
-    {{-- Hero Slider Component --}}
-    <main>
-        <x-hero-slider />
-    </main>
+ @section('title', 'Home')
 
-    {{-- Content Placeholder --}}
-    <div class="container mx-auto px-4 py-16 text-center">
-        <h2 class="text-3xl font-bold">Welcome to Our College</h2>
-        <p class="mt-4 text-lg text-gray-600">Your future starts here. Discover our programs and campus life.</p>
-    </div>
+ @section('content')
 
-    {{-- Institutions Section --}}
-    <x-institutions-section />
+<x-hero-slider />
+<x-institutions-section />
+<x-news-section />
+<x-admissions-cta />
+<x-testimonials-section />
+<x-stats-counter-section />
+<x-photo-gallery />
+<x-video-gallery />
 
-    {{-- News & Announcements Section --}}
-    <x-news-section />
-
-    {{-- Admissions CTA Section --}}
-    <x-admissions-cta />
-
-    {{-- Testimonials Section --}}
-    <x-testimonials-section />
-
-    {{-- Stats Counter Section --}}
-    <x-stats-counter-section />
-
-    {{-- Photo Gallery Section --}}
-    <x-photo-gallery />
-
-    {{-- Video Gallery Section --}}
-    <x-video-gallery />
-
-</x-app-layout>
+ @endsection

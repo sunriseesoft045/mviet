@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-primary: #14532d; /* Deep Academic Green */
+  --color-secondary: #dcfce7; /* Soft Mint */
+  --color-accent: #facc15;   /* Gold Highlight */
+}
+
+/* Base styles for body */
+body {
+  font-family: theme('fontFamily.body'); /* Using the new body font */
+  color: theme('colors.gray.800'); /* Default text color, adjust if needed */
+  /* Soft gradient background */
+  background: linear-gradient(to bottom right, theme('colors.gray.100'), theme('colors.gray.200'));
+  min-height: 100vh;
+}
+
+@layer components {
+  /* Button base styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply bg-primary text-secondary hover:bg-primary/90;
+  }
+
+  /* Accent button */
+  .btn-accent {
+    @apply bg-accent text-primary hover:bg-accent/90;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply bg-secondary text-primary hover:bg-secondary/80;
+  }
+
+  /* Card glass styles */
+  .card-glass {
+    @apply bg-white/30 backdrop-blur-lg rounded-xl shadow-lg border border-white/50;
+  }
+}

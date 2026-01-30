@@ -59,3 +59,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/stats-counter-section.blade.php ENDPATH**/ ?>

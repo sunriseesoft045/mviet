@@ -35,7 +35,7 @@
 ?>
 <section
     x-data="{
-        videos: {{ Js::from($videoData) }},
+        videos: <?php echo e(Js::from($videoData)); ?>,
         isModalOpen: false,
         currentVideo: null,
         openModal(video) {
@@ -142,3 +142,4 @@
         </div>
     </div>
 </section>
+<?php /**PATH C:\xampp\htdocs\professional-college-website\resources\views/components/video-gallery.blade.php ENDPATH**/ ?>
